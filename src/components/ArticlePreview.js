@@ -57,7 +57,7 @@ const ArticlePreview = props => {
       </div>
 
       <Link to={`article/${article.slug}`} className="preview-link">
-        <h1>{article.body}</h1>
+        <p className="til">{article.body}</p>
         <ul className="tag-list">
           {
             article.tagList.map(tag => {
