@@ -1,6 +1,6 @@
 import ArticleList from './ArticleList';
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import {
@@ -77,8 +77,8 @@ const mapDispatchToProps = dispatch => ({
 class Profile extends React.Component {
   componentWillMount() {
     this.props.onLoad(Promise.all([
-      agent.Profile.get(this.props.params.username),
-      agent.Articles.byAuthor(this.props.params.username)
+      agent.Profile.get(this.props.match.params.username),
+      agent.Articles.byAuthor(this.props.match.params.username)
     ]));
   }
 
